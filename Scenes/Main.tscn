@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://diosx0hvmgfnn"]
 
+[ext_resource type="Script" uid="uid://vfq45ivftl55" path="res://Scripts/System/LevelManager.cs" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://ceghn1ph5mqf5" path="res://Scenes/StartingRoom.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://bvw6mbwmsf5hv" path="res://Scenes/Player.tscn" id="2_idj7w"]
 
 [node name="Main" type="Node2D" unique_id=2146638223]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1987118745]
-zoom = Vector2(2, 2)
+[node name="Game Manager" type="Node" parent="." unique_id=1801937156]
 
-[node name="StartingRoom" parent="." unique_id=901612038 instance=ExtResource("1_r150o")]
+[node name="Level Manager" type="Node" parent="Game Manager" unique_id=1407904928]
+script = ExtResource("1_kln2b")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1987118745]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Starting Room" parent="." unique_id=901612038 instance=ExtResource("1_r150o")]
 
 [node name="Player" parent="." unique_id=2036138293 instance=ExtResource("2_idj7w")]

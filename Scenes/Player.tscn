@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://bvw6mbwmsf5hv"]
 
+[ext_resource type="Script" uid="uid://cwp7aqo5ly205" path="res://Scripts/Game/Player/Player.cs" id="1_dewec"]
 [ext_resource type="Script" uid="uid://c6j2rw34i4kdm" path="res://Scripts/Game/Player/PlayerController.cs" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://dn370rlmocjp" path="res://Assets/Placeholder/hero.png" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://8fsfab487saj" path="res://Scripts/Game/Common/CharacterStats.cs" id="4_5ixxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(15, 13)
 
 [node name="Player" type="Node" unique_id=2036138293]
+script = ExtResource("1_dewec")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1667587771]
 script = ExtResource("1_kyqiw")
@@ -13,5 +17,9 @@ script = ExtResource("1_kyqiw")
 [node name="Sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=313490387]
 texture = ExtResource("1_rpqav")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=125293871]
+[node name="Hitbox" type="CollisionShape2D" parent="CharacterBody2D" unique_id=125293871]
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="Stats" type="Node" parent="." unique_id=1983789093]
+script = ExtResource("4_5ixxa")
